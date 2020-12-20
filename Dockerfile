@@ -21,11 +21,15 @@ RUN apt-get install htop
 # 3) install packages
 RUN pip install --no-cache-dir networkx scipy python-louvain
 
+# 4) install carla
+RUN sudo apt-get update
+RUN sudo apt-get install software-properties-common
+
 RUN sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1AF1527DE64CB8D9
 RUN sudo add-apt-repository "deb [arch=amd64] http://dist.carla.org/carla $(lsb_release -sc) main"
 RUN sudo apt-get install carla-simulator=0.9.10-1
 
-# 4) change back to notebook user
+# 5) change back to notebook user
 # COPY /run_jupyter.sh /
 USER $NB_UID
 
