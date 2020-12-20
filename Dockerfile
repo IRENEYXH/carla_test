@@ -27,7 +27,7 @@ RUN sudo apt-get install -y software-properties-common
 
 RUN sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1AF1527DE64CB8D9
 RUN sudo add-apt-repository "deb [arch=amd64] http://dist.carla.org/carla $(lsb_release -sc) main"
-RUN sudo apt-get install carla-simulator=0.9.10-1
+RUN sudo apt-get install -y carla-simulator=0.9.10-1
 
 # 5) change back to notebook user
 # COPY /run_jupyter.sh /
