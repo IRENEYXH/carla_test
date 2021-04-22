@@ -29,7 +29,7 @@ RUN sudo apt-get install lsb-core -y
 RUN sudo apt-get install software-properties-common -y
 RUN sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 
-RUN sudo apt-get install build-essential clang-9 lld-9 g++-7 cmake ninja-build libvulkan1 python python-pip python-dev python3-dev python3-pip libpng-dev libtiff5-dev libjpeg-dev tzdata sed curl unzip autoconf libtool rsync libxml2-dev git
+RUN sudo apt-get install build-essential clang-9 lld-9 g++-7 cmake ninja-build libvulkan1 python libpng-dev libtiff5-dev libjpeg-dev tzdata sed curl unzip autoconf libtool rsync libxml2-dev git
 RUN pip2 install --user setuptools
 RUN pip3 install --user -Iv setuptools==47.3.1
 RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
