@@ -13,14 +13,18 @@ FROM $BASE_CONTAINER
 
 LABEL maintainer="UC San Diego ITS/ETS <ets-consult@ucsd.edu>"
 
-# 2) change to root to install packages
+# 2) change to root
 USER root
 
-RUN apt-get -y install htop
 
 # 3) install packages
 RUN pip install --no-cache-dir networkx scipy python-louvain
+RUN conda install -y cudatoolkit=10.1 cudnn nccl && \
+    conda clean --all -f -y
+
+
 # Install dependencies
+RUN sudo apt install lsb-core
 RUN sudo apt-get update
 RUN sudo apt-get install software-properties-common -y
 RUN sudo add-apt-repository ppa:ubuntu-toolchain-r/test
