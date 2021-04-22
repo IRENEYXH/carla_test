@@ -29,12 +29,12 @@ RUN sudo apt-get install lsb-core -y
 RUN sudo apt-get install software-properties-common -y
 RUN sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
-RUN sudo apt-add-repository "deb http://apt.llvm.org/$(lsb_release -c --short)/ llvm-toolchain-$(lsb_release -c --short)-8 main"
+RUN sudo apt-add-repository "deb http://apt.llvm.org/$(lsb_release -c --short)/ llvm-toolchain-$(lsb_release -c --short)-9 main"
 RUN sudo apt-get update
 
 # Change default clang version
-RUN sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/lib/llvm-8/bin/clang++ 180
-RUN sudo update-alternatives --install /usr/bin/clang clang /usr/lib/llvm-8/bin/clang 180
+RUN sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/lib/llvm-9/bin/clang++ 180
+RUN sudo update-alternatives --install /usr/bin/clang clang /usr/lib/llvm-9/bin/clang 180
 
 
 # 4) change back to notebook user
