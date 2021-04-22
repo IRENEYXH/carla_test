@@ -24,8 +24,8 @@ RUN conda install -y cudatoolkit=10.1 cudnn nccl && \
 
 
 # Install dependencies
-RUN sudo apt-get install lsb-core -y
 RUN sudo apt-get update
+RUN sudo apt-get install lsb-core -y
 RUN sudo apt-get install software-properties-common -y
 RUN sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
